@@ -1,0 +1,104 @@
+@layer base, utils, components;
+@import 'https://cdn.jsdelivr.net/npm/@webtui/css@0.1.9/dist/base.css';
+/* Utils */
+@import 'https://cdn.jsdelivr.net/npm/@webtui/css@0.1.9/dist/utils/box.css';
+/* Components */
+@import 'https://cdn.jsdelivr.net/npm/@webtui/css@0.1.9/dist/components/button.css';
+@import 'https://cdn.jsdelivr.net/npm/@webtui/css@0.1.9/dist/components/typography.css';
+@import 'https://cdn.jsdelivr.net/npm/@webtui/css@0.1.9/dist/components/separator.css';
+
+@import 'https://cdn.jsdelivr.net/npm/@webtui/theme-catppuccin@0.0.4/dist/index.css';
+
+html, body {
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 1ch;
+  padding-block: 1lh;
+}
+
+main {
+  flex: 1;
+}
+
+.prompt-line {
+  display: flex;
+  gap: 1ch;
+}
+
+.peach {
+  color: var(--peach);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+span {
+  background-color: var(--background0);
+  padding: 0 1ch;
+  color: var(--red);
+}
+
+.pad1 {
+  margin: 2ch 1ch;
+}
+
+.pad1 p {
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+a[target=_blank]::after {
+  content: '↗';
+}
+
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 1ch;
+  padding-left: 5ch;
+  padding-right: 5ch;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--foreground2);
+}
+
+.section-divider span {
+  background-color: unset;
+  color: var(--foreground1);
+  padding: 0;
+}
+
+.columns {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 2ch;
+  padding-left: 15ch;
+  padding-right: 5ch;
+}
+
+.column {
+  width: 50%;
+  flex: none;
+}

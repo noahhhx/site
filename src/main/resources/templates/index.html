@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/"
+      th:replace="~{layout :: layout (~{::title}, ~{::section})}">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>noahhh</title>
+</head>
+<body>
+
+<section>
+
+  <div box-="square" shear-="top">
+    
+    <div class="header">
+      <span>noahhh</span>
+    </div>
+    
+    <div class="pad1">
+
+      <div class="prompt-line">
+        <p>user@noahhh.co.uk:~$ </p>
+        <p><strong>fastfetch</strong></p>
+      </div>
+
+      <br>
+
+      <div class="prompt-line">
+        <img th:src="@{images/monstercat.png}" alt="monstercat" height="200px">
+        <div>
+          <p>
+            <strong class="peach">OS:</strong>
+            Arch
+          </p>
+          <p>
+            <strong class="peach">Theme:</strong>
+            Catppuccin
+          </p>
+          <p>
+            <strong class="peach">Terminal:</strong>
+            Kitty
+          </p>
+          <p>
+            <strong class="peach">Uptime:</strong>
+            28 years
+          </p>
+          <p>
+            <strong class="peach">Init system:</strong>
+            Caffeine
+          </p>
+          <p>
+            <strong class="peach">GitHub:</strong>
+            <a target="_blank" href="https://github.com/noahhhx">https://github.com/noahhhx</a>
+          </p>
+          <p>
+            <strong class="peach">Email:</strong>
+            <a target="_blank" href="mailto:noahhh@tuta.com">noahhh@tuta.com</a>
+          </p>
+          <p>
+            <strong class="peach">Signal:</strong>
+            <a target="_blank" href="https://signal.me/#eu/RNtcYdXvy2W9uhWi5Jo9SvJbvdILdwUQf-I18MdAQSYPdVPNvxZFaaP293OIcpr9">@noahhh.01</a>
+          </p>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="section-divider">
+      <span>About Me</span>
+    </div>
+
+    <div class="pad1">
+      <p>
+        I'm <strong>Noah</strong>, a Software Engineer who builds mostly with Java. I feel most
+        at home when developing tools for other developers and technical people, but enjoy the
+        problem solving aspect of any challenge. I have an interest in FOSS, self-hosting, local
+        first and privacy.
+        <br>
+        
+        When I'm not coding I like to ride bikes, read books and spend as much time outside as
+        possible.
+      </p>
+    </div>
+
+    <div class="section-divider">
+      <span>Things I Like</span>
+    </div>
+
+    <div class="pad1">
+      <div class="columns">
+        <div class="column">
+          <p>Tailscale</p>
+        </div>
+        <div class="column">
+          <p>Todo links</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

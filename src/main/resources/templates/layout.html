@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html data-webtui-theme="catppuccin-mocha" lang="en" xmlns:th="https://www.thymeleaf.org/" th:fragment="layout (title, content)">
+<head>
+  <meta charset="UTF-8">
+  <title th:replace="${title}">noahhhx</title>
+  <link rel="icon" th:href="@{/images/favicon.ico}">
+
+  <!-- Common CSS -->
+  <link rel="stylesheet" th:href="@{/css/main.css}">
+
+</head>
+<body>
+<header>
+  <nav>
+    <a th:href="@{/}">
+      <button size-="small" box="square">Home</button>
+    </a>
+  </nav>
+</header>
+
+<main th:replace="${content}">
+  <p>No content</p>
+</main>
+
+<footer>
+  <!-- Shared footer -->
+</footer>
+</body>
+</html>
