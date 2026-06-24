@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/"
+      th:replace="~{layout :: layout (~{::title}, ~{::section})}">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>noahhh</title>
+</head>
+<body>
+
+<section>
+  <div class="cv-toolbar">
+    <button size-="small" box="square" onclick="window.print()">Export PDF</button>
+  </div>
+  <div class="cv-content">
+    <div th:utext="${mdHtmlContent}"></div>
+  </div>
+</section>
+</body>
+</html>

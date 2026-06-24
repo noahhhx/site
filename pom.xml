@@ -9,11 +9,13 @@
     <version>4.1.0</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
+  
   <groupId>io.github.noahhhx</groupId>
   <artifactId>site</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>site</name>
   <description>site</description>
+  
   <url/>
   <licenses>
     <license/>
@@ -27,9 +29,11 @@
     <tag/>
     <url/>
   </scm>
+  
   <properties>
     <java.version>21</java.version>
   </properties>
+  
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -38,6 +42,12 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-webmvc</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.commonmark</groupId>
+      <artifactId>commonmark</artifactId>
+      <version>0.29.0</version>
     </dependency>
 
     <dependency>

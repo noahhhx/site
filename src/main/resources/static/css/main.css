@@ -102,3 +102,262 @@ a[target=_blank]::after {
   width: 50%;
   flex: none;
 }
+
+/* ── Latin Modern (print) ── */
+@font-face {
+  font-family: 'Latin Modern';
+  src: local('Latin Modern Roman'), local('LatinModernRoman-Regular'),
+       url('https://cdn.jsdelivr.net/npm/@fontsource/latin-modern-roman@5/files/latin-modern-roman-latin-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Latin Modern';
+  src: local('Latin Modern Roman Bold'), local('LatinModernRoman-Bold'),
+       url('https://cdn.jsdelivr.net/npm/@fontsource/latin-modern-roman@5/files/latin-modern-roman-latin-700-normal.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Latin Modern';
+  src: local('Latin Modern Roman Italic'), local('LatinModernRoman-Italic'),
+       url('https://cdn.jsdelivr.net/npm/@fontsource/latin-modern-roman@5/files/latin-modern-roman-latin-400-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ── CV toolbar ── */
+.cv-toolbar {
+  max-width: 65ch;
+  margin: 0 auto 0.5rem;
+  padding: 0 1rem;
+  text-align: right;
+}
+
+.export-btn {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.85rem;
+  padding: 0.35rem 1rem;
+  border: 1px solid var(--surface1);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--subtext0);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.export-btn:hover {
+  background: var(--surface0);
+  color: var(--text);
+}
+
+/* ── CV — LaTeX-style ── */
+.cv-content,
+.cv-content h1,
+.cv-content h2,
+.cv-content h3,
+.cv-content h4,
+.cv-content h5,
+.cv-content h6,
+.cv-content p,
+.cv-content li,
+.cv-content blockquote,
+.cv-content a {
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.cv-content {
+  font-size: 11pt;
+  line-height: 1.5;
+  color: var(--text);
+  max-width: 80ch;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+/* Name */
+.cv-content h1 {
+  font-size: 2.2rem;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.05em;
+  font-variant: small-caps;
+  margin: 0 0 0.5rem 0;
+  color: var(--text);
+}
+
+/* Contact line — first paragraph after name */
+.cv-content h1 + p {
+  text-align: center;
+  font-size: 0.95em;
+  color: var(--subtext1);
+  margin-bottom: 1.5rem;
+}
+
+/* Section headings */
+.cv-content h2 {
+  font-size: 1.15rem;
+  font-weight: 400;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  border-top: 1px solid var(--surface1);
+  padding-top: 0.75rem;
+  margin: 1.5rem 0 0.5rem 0;
+  color: var(--text);
+}
+
+/* Subsection headings */
+.cv-content h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.75rem 0 0.1rem 0;
+  color: var(--subtext0);
+}
+
+.cv-content h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0.5rem 0 0.1rem 0;
+  color: var(--subtext0);
+}
+
+/* Paragraphs */
+.cv-content p {
+  margin: 0 0 0.4rem 0;
+}
+
+/* Lists */
+.cv-content ul,
+.cv-content ol {
+  margin: 0.25rem 0;
+  padding-left: 1.5rem;
+}
+
+.cv-content li {
+  margin-bottom: 0.12rem;
+}
+
+.cv-content li p {
+  margin: 0;
+}
+
+/* Links */
+.cv-content a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.cv-content a:hover {
+  text-decoration: underline;
+}
+
+/* Horizontal rule */
+.cv-content hr {
+  border: none;
+  border-top: 1px solid var(--surface1);
+  margin: 0.5rem 0;
+}
+
+/* Strong / emphasis */
+.cv-content strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.cv-content em {
+  font-style: italic;
+}
+
+/* Blockquote */
+.cv-content blockquote {
+  margin: 0.5rem 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--surface1);
+  color: var(--subtext0);
+  font-style: italic;
+}
+
+/* ── Print / Export ── */
+@media print {
+  @page {
+    margin: 2cm;
+  }
+
+  body {
+    max-width: none;
+    padding: 0;
+    margin: 0;
+    background: #fff;
+  }
+
+  header,
+  footer,
+  nav,
+  .cv-toolbar {
+    display: none;
+  }
+
+  .cv-content,
+  .cv-content h1,
+  .cv-content h2,
+  .cv-content h3,
+  .cv-content h4,
+  .cv-content h5,
+  .cv-content h6,
+  .cv-content p,
+  .cv-content li,
+  .cv-content blockquote,
+  .cv-content a {
+    font-family: 'Latin Modern', 'CMU Serif', Georgia, 'Times New Roman', serif;
+  }
+
+  .cv-content {
+    font-size: 10.5pt;
+    line-height: 1.4;
+    color: #000;
+    background: #fff;
+    max-width: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .cv-content h1,
+  .cv-content h2,
+  .cv-content h3,
+  .cv-content h4,
+  .cv-content p,
+  .cv-content li,
+  .cv-content strong,
+  .cv-content em,
+  .cv-content blockquote {
+    color: #000;
+  }
+
+  .cv-content h2 {
+    border-top-color: #000;
+  }
+
+  .cv-content a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  .cv-content hr {
+    border-top-color: #000;
+  }
+
+  .cv-content blockquote {
+    border-left-color: #000;
+  }
+
+  .cv-content h1 + p {
+    color: #000;
+  }
+
+  a[target=_blank]::after {
+    content: none;
+  }
+}
