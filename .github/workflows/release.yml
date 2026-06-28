@@ -1,0 +1,61 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: 21
+          distribution: temurin
+          cache: maven
+
+      - name: Derive versions from tag
+        id: version
+        run: |
+          TAG="${{ github.ref_name }}"
+          VERSION="${TAG#v}"
+          echo "release=${VERSION}" >> "$GITHUB_OUTPUT"
+
+          IFS='.' read -r MAJOR MINOR PATCH <<< "$VERSION"
+          echo "next=${MAJOR}.${MINOR}.$((PATCH + 1))-SNAPSHOT" >> "$GITHUB_OUTPUT"
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set release version
+        run: ./mvnw versions:set -DnewVersion="${{ steps.version.outputs.release }}" -DgenerateBackupPoms=false
+
+      - name: Build and push container image
+        run: >
+          ./mvnw compile jib:build
+          -Ddocker.image.prefix=ghcr.io/${{ github.repository_owner }}
+          -Djib.to.tags=${{ steps.version.outputs.release }},latest
+
+      - name: Bump POM to next SNAPSHOT
+        run: |
+          git checkout "${{ github.event.repository.default_branch }}"
+          git pull --rebase
+          ./mvnw versions:set -DnewVersion="${{ steps.version.outputs.next }}" -DgenerateBackupPoms=false
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add pom.xml
+          git commit -m "chore: bump to ${{ steps.version.outputs.next }}"
+          git push
