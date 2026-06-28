@@ -46,6 +46,7 @@ jobs:
 
       - name: Bump POM to next SNAPSHOT
         run: |
+          git reset --hard
           git checkout "${{ github.event.repository.default_branch }}"
           git pull --rebase
           ./mvnw versions:set -DnewVersion="${{ steps.version.outputs.next }}" -DgenerateBackupPoms=false
