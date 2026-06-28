@@ -9,31 +9,38 @@
     <version>4.1.0</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
-  
+
   <groupId>io.github.noahhhx</groupId>
   <artifactId>site</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+
   <name>site</name>
-  <description>site</description>
-  
-  <url/>
+  <description>home website</description>
+  <url>https://github.com/noahhhx/site</url>
+
+
   <licenses>
     <license/>
   </licenses>
+
   <developers>
-    <developer/>
+    <developer>
+      <name>Noah Giles</name>
+      <email>noahhh@tuta.com</email>
+      <organization>noah</organization>
+    </developer>
   </developers>
+
   <scm>
-    <connection/>
-    <developerConnection/>
-    <tag/>
-    <url/>
+    <connection>scm:git:git://github.com/noahhhx/site.git</connection>
+    <developerConnection>scm:git:ssh://github.com/noahhhx/site.git</developerConnection>
+    <url>https://github.com/noahhhx/site</url>
   </scm>
-  
+
   <properties>
     <java.version>21</java.version>
   </properties>
-  
+
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>

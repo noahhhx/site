@@ -31,6 +31,15 @@ header nav {
   padding-block: 1lh;
 }
 
+button.active {
+  background-color: var(--mauve );
+}
+
+header nav button:active {
+  --mapped-primary: var(--button-primary);
+  --mapped-secondary: var(--button-secondary);
+}
+
 main {
   flex: 1;
 }
@@ -131,7 +140,7 @@ a[target=_blank]::after {
 
 /* ── CV toolbar ── */
 .cv-toolbar {
-  max-width: 65ch;
+  max-width: 90ch;
   margin: 0 auto 0.5rem;
   padding: 0 1rem;
   text-align: right;
@@ -173,9 +182,10 @@ a[target=_blank]::after {
   font-size: 11pt;
   line-height: 1.5;
   color: var(--text);
-  max-width: 80ch;
+  max-width: 110ch;
   margin: 0 auto;
   padding: 2rem 1rem 4rem;
+  word-break: normal;
 }
 
 /* Name */
@@ -242,6 +252,12 @@ a[target=_blank]::after {
 
 .cv-content li p {
   margin: 0;
+}
+
+.cv-content p,
+.cv-content li {
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 /* Links */
@@ -322,6 +338,13 @@ a[target=_blank]::after {
     max-width: none;
     padding: 0;
     margin: 0;
+    word-break: normal;
+  }
+
+  .cv-content p,
+  .cv-content li {
+    word-break: normal;
+    overflow-wrap: normal;
   }
 
   .cv-content h1,
