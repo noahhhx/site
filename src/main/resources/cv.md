@@ -4,17 +4,17 @@ Email: [noah@tuta.com](mailto:noah@tuta.com) | GitHub: [https://github.com/noahh
 
 ## Professional Skills
 
-**Languages & Frameworks** — Java, Spring Boot, Spring Ecosystem, JUnit, TestContainers
+**Languages & Frameworks** - Java, Spring Boot, Spring Ecosystem, JUnit, TestContainers
 
 **Infrastructure & DevOps** - Docker, Jenkins, WildFly, ActiveMQ, Maven, CI/CD, Linux, Git, Bitbucket, SNYK
 
-**Databases & Architecture** — PostgreSQL, Oracle, MS SQL, microservices, shared libraries, REST, gRPC
+**Databases & Architecture** - PostgreSQL, Oracle, MS SQL, microservices, shared libraries, REST, gRPC
 
-**Practices** — Agile, AI-DLC, team leadership, mentoring, cross-team collaboration, legacy modernisation
+**Practices** - Agile, AI-DLC, team leadership, mentoring, cross-team collaboration, legacy modernisation
 
 ## Experience
 
-### Senior Software Engineer — SmartStream
+### Senior Software Engineer - SmartStream
 *2021–Present*
 
 Backend software engineer and team lead within the Platform team, responsible for designing and maintaining
