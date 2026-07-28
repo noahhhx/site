@@ -46,7 +46,18 @@ main {
 
 .prompt-line {
   display: flex;
+  align-items: center;
   gap: 1ch;
+  min-height: 0;
+}
+
+.prompt-line > img {
+  flex: none;
+}
+
+.prompt-line > div {
+  min-width: 0;
+  flex: 1;
 }
 
 .peach {
@@ -294,6 +305,58 @@ a[target=_blank]::after {
   border-left: 2px solid var(--surface1);
   color: var(--subtext0);
   font-style: italic;
+}
+
+/* ── Mobile ── */
+@media (max-width: 640px) {
+  body {
+    padding: 12px;
+  }
+
+  /* Bigger tap targets for nav buttons */
+  header nav {
+    gap: 1ch;
+    padding-block: 0.5lh;
+  }
+
+  header nav a {
+    flex: 1;
+  }
+
+  header nav button[size-="small"] {
+    --mapped-primary: var(--button-primary);
+    --mapped-secondary: var(--button-secondary);
+    width: 100%;
+    min-height: 48px;
+    font-size: 1.1rem;
+  }
+
+  /* Shrink the fastfetch image so the info column keeps width */
+  .prompt-line {
+    gap: 1ch;
+  }
+
+  .prompt-line > img {
+    width: 96px !important;
+    height: auto !important;
+  }
+
+  /* Let fastfetch text use the same size as the About Me section */
+  .prompt-line p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* Tighter side padding so content doesn't overflow narrow screens */
+  .section-divider {
+    padding-left: 2ch;
+    padding-right: 2ch;
+  }
+
+  .columns {
+    padding-left: 2ch;
+    padding-right: 2ch;
+  }
 }
 
 /* ── Print / Export ── */
