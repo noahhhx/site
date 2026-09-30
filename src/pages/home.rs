@@ -64,10 +64,6 @@ pub fn Home() -> impl IntoView {
             "problem solving aspect of any challenge. I have an interest in FOSS, self-hosting, "
             "local-first and privacy."
         </p>
-        <p>
-            "When I'm not coding I like to ride bikes, read books and spend as much time outside "
-            "as possible. At the moment I'm training towards an Ironman."
-        </p>
 
         <p class="prompt cursor"></p>
     }
