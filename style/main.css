@@ -364,14 +364,18 @@ a.ext::after {
 .fetch {
   display: flex;
   align-items: flex-start;
-  gap: 3ch;
   margin-bottom: 1.5em;
 }
 
+/* The logo sits centred in a square as wide as it is tall, which spaces it
+   off the window edge and the text. */
 .fetch img {
   flex: none;
+  align-self: center; /* vertically centred against the text */
   width: auto;
   height: 240px;
+  aspect-ratio: 1;
+  object-fit: contain;
 }
 
 .fetch p { margin: 0; }
@@ -405,7 +409,10 @@ dl.kv { grid-template-columns: 14ch 1fr; }
     gap: 1em;
   }
 
-  .fetch img { height: 160px; }
+  .fetch img {
+    align-self: flex-start;
+    height: 160px;
+  }
 }
 
 /* ------------------------------------------------------------- projects -- */
