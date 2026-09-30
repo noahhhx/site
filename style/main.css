@@ -136,7 +136,7 @@
   --term-blur: blur(4px) brightness(0.6) contrast(0.75); /* blur { brightness, contrast } */
   --term-shadow: 0 0 2px 1px rgb(26 26 26 / 0.93); /* shadow range 2, #1a1a1aee */
   --term-padding: 14px;                       /* window_padding_width */
-  --term-width: 90ch;
+  --term-width: 110ch;
   --gap: 10px;                                /* gaps_out */
 
   /* Type */
