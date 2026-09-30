@@ -8,15 +8,29 @@ crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 leptos = "0.8"
+leptos_meta = "0.8"
+leptos_router = "0.8"
 leptos_axum = { version = "0.8", optional = true }
 axum = { version = "0.8", optional = true }
 tokio = { version = "1", features = ["rt-multi-thread"], optional = true }
 console_error_panic_hook = { version = "0.1", optional = true }
 wasm-bindgen = { version = "=0.2.127", optional = true }
 
+# content/*.md is rendered to HTML at build time, so the markdown parser
+# never ends up in the wasm bundle.
+[build-dependencies]
+pulldown-cmark = { version = "0.13", default-features = false, features = ["html"] }
+
 [features]
 hydrate = ["leptos/hydrate", "dep:console_error_panic_hook", "dep:wasm-bindgen"]
-ssr = ["leptos/ssr", "dep:leptos_axum", "dep:axum", "dep:tokio"]
+ssr = [
+  "leptos/ssr",
+  "leptos_meta/ssr",
+  "leptos_router/ssr",
+  "dep:leptos_axum",
+  "dep:axum",
+  "dep:tokio",
+]
 
 [package.metadata.leptos]
 output-name = "site"
