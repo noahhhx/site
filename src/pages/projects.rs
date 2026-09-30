@@ -56,13 +56,6 @@ pub fn Projects() -> impl IntoView {
 
         <h2>"learning rust"</h2>
         <p>"I write Java for a living. These are how I'm learning Rust."</p>
-        <h3>"site"</h3>
-        <Meta lang="Rust" repo="https://github.com/noahhhx/site"/>
-        <p>
-            "This site. It started out as Spring Boot and Thymeleaf; now it's "
-            <Ext href="https://leptos.dev/">"Leptos"</Ext>" on Axum, rendered on the server and "
-            "hydrated in the browser."
-        </p>
         <h3>"rust-shell"</h3>
         <Meta lang="Rust" repo="https://github.com/noahhhx/rust-shell"/>
         <p>
